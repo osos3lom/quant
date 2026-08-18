@@ -44,8 +44,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    { media: "(prefers-color-scheme: light)", color: "#F4FBF7" },
+    { media: "(prefers-color-scheme: dark)", color: "#021A0F" },
   ],
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased bg-slate-50 dark:bg-brand-950">
         <Navbar />
         <main className="pt-16 sm:pt-24 pb-20 md:pb-0">{children}</main>
         <footer className="mt-12 sm:mt-16 border-t border-slate-200 py-8 mb-20 md:mb-0 dark:border-slate-800">

@@ -248,17 +248,17 @@ export function QuantumHeroCanvas() {
   return (
     <div
       ref={containerRef}
-      className="relative h-[320px] w-full sm:h-[440px] lg:h-[520px] cursor-crosshair select-none overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 dark:from-slate-950 dark:via-slate-900/90 dark:to-slate-950 p-2 shadow-2xl backdrop-blur-xl"
+      className="relative h-[320px] w-full sm:h-[440px] lg:h-[520px] cursor-crosshair select-none overflow-hidden rounded-3xl border border-slate-200 bg-white/40 dark:border-slate-800 dark:bg-slate-900/40 p-2 shadow-xl backdrop-blur-md"
     >
       <canvas ref={canvasRef} className="h-full w-full rounded-2xl" />
 
       {/* Floating Dirac Superposition Hud Overlay */}
-      <div className="absolute top-3 right-3 sm:top-5 sm:right-5 flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-500/30 bg-slate-900/90 dark:bg-slate-900/80 px-3 py-1 sm:px-3.5 sm:py-1.5 backdrop-blur-md text-[11px] sm:text-xs font-mono text-emerald-400 shadow-lg">
+      <div className="absolute top-3 right-3 sm:top-5 sm:right-5 flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-500/30 bg-slate-900/90 dark:bg-slate-950/90 px-3 py-1 sm:px-3.5 sm:py-1.5 backdrop-blur-md text-[11px] sm:text-xs font-mono text-emerald-400 shadow-lg">
         <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
         <KaTeXMath math="|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)" className="my-0 text-xs sm:text-sm" />
       </div>
 
-      <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-slate-700/50 bg-slate-900/90 dark:bg-slate-900/80 px-3 py-2 sm:px-4 sm:py-2.5 backdrop-blur-md text-[11px] sm:text-xs text-slate-300 shadow-xl">
+      <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-slate-700/50 bg-slate-900/90 dark:bg-slate-950/90 px-3 py-2 sm:px-4 sm:py-2.5 backdrop-blur-md text-[11px] sm:text-xs text-slate-300 shadow-xl">
         <div className="flex flex-col">
           <span className="text-[9px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">حالة التراكب (Superposition)</span>
           <span className="font-mono text-emerald-300 font-bold text-xs sm:text-sm">P(0) = 50% · P(1) = 50%</span>

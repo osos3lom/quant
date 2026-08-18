@@ -1,7 +1,7 @@
 /**
  * app/page.tsx
  * الصفحة الرئيسية: تجربة تفاعلية وبصرية غامضة وسينمائية للحوسبة الكمية.
- * تدعم الوضعين الليلي والنهاري والاستجابة الكاملة للأجهزة الذكية.
+ * نمط النقاط الكمية (quantum-grid) يغطي الخلفية بالكامل وبصورة متناسقة دون انقطاع.
  */
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Sigma, Sparkles } from "lucide-react";
@@ -16,11 +16,9 @@ import { QuantumPortalCTA } from "@/components/quantum/QuantumPortalCTA";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#020712] dark:text-slate-100 overflow-x-hidden">
-      {/* Background Ambient Grid & Particles */}
+    <div className="relative min-h-screen">
+      {/* Background Dotted Grid Pattern across entire page */}
       <div className="quantum-grid fixed inset-0 pointer-events-none -z-10" aria-hidden="true" />
-      <div className="pointer-events-none fixed top-0 right-1/4 h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-brand-500/10 blur-[100px] sm:blur-[140px] -z-10" />
-      <div className="pointer-events-none fixed bottom-0 left-1/4 h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-gold-400/10 blur-[100px] sm:blur-[140px] -z-10" />
 
       {/* 1. HERO SECTION: Enter the Quantum World */}
       <section className="relative px-4 pt-6 pb-14 sm:px-6 sm:pt-14 lg:pt-16">

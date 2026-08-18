@@ -10,7 +10,7 @@
   /* ---------------------------------------------------------------- */
   /* هوية العلامة: زمرّدي ملكي وذهبي — Royal emerald & gold identity  */
   /* ---------------------------------------------------------------- */
-  --color-brand-50:  #EEFBF0;
+  --color-brand-50: #EEFBF0;
   --color-brand-100: #D0F4D8;
   --color-brand-200: #A0E8B2;
   --color-brand-300: #60D47C;
@@ -25,7 +25,7 @@
   /* ---------------------------------------------------------------- */
   /* ذهبي — لمسات التميّز والإنجازات  Gold accent scale               */
   /* ---------------------------------------------------------------- */
-  --color-gold-50:  #FDF9EE;
+  --color-gold-50: #FDF9EE;
   --color-gold-100: #FAF0D4;
   --color-gold-200: #F3DDA3;
   --color-gold-300: #E8C55F;
@@ -40,7 +40,7 @@
   /* ---------------------------------------------------------------- */
   /* الحياديات مضبوطة على مسحة زمردية لتتناغم مع العلامة               */
   /* ---------------------------------------------------------------- */
-  --color-slate-50:  #F4FBF7;
+  --color-slate-50: #F4FBF7;
   --color-slate-100: #E2F2E9;
   --color-slate-200: #CCE3D5;
   --color-slate-300: #A4C5B0;
@@ -108,13 +108,10 @@
 
 .quantum-grid {
   background-image:
-    radial-gradient(
-      circle at 1px 1px,
-      color-mix(in oklab, var(--color-brand-500) 25%, transparent) 1px,
-      transparent 0
-    );
+    radial-gradient(circle at 1px 1px,
+      color-mix(in oklab, var(--color-brand-500) 30%, transparent) 1px,
+      transparent 0);
   background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 50%, transparent 100%);
 }
 
 .quantum-glow-emerald {
@@ -140,13 +137,29 @@
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 .animate-float {
@@ -177,22 +190,28 @@
   color: #104F09;
   font-weight: 600;
 }
+
 .tok-builtin {
   color: #136207;
 }
+
 .tok-string {
   color: #A17E18;
 }
+
 .tok-number {
   color: #7c3aed;
 }
+
 .tok-comment {
   color: #6E9A80;
   font-style: italic;
 }
+
 .tok-operator {
   color: #385A47;
 }
+
 .tok-def {
   color: #136207;
   font-weight: 600;
@@ -203,22 +222,28 @@
   color: #60D47C;
   font-weight: 600;
 }
+
 .dark .tok-builtin {
   color: #30B050;
 }
+
 .dark .tok-string {
   color: #E8C55F;
 }
+
 .dark .tok-number {
   color: #A0E8B2;
 }
+
 .dark .tok-comment {
   color: #6E9A80;
   font-style: italic;
 }
+
 .dark .tok-operator {
   color: #A4C5B0;
 }
+
 .dark .tok-def {
   color: #D4AF37;
   font-weight: 600;

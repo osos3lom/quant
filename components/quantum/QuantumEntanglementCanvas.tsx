@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Zap, RefreshCw, GitCommit } from "lucide-react";
-import { KaTeXMath } from "@/components/KaTeXMath";
+import { KaTeXMath, MathText } from "@/components/KaTeXMath";
 
 export function QuantumEntanglementCanvas() {
   const [qubitAState, setQubitAState] = useState<"superposition" | "0" | "1">("superposition");
@@ -137,7 +137,7 @@ export function QuantumEntanglementCanvas() {
       <div className="flex flex-col items-center text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-gold-400/30 bg-gold-400/10 px-3.5 py-1 text-xs font-semibold text-gold-700 dark:text-gold-400">
           <GitCommit className="h-3.5 w-3.5" />
-          التشابك الكمي المزدوج · Bell State |\Phi^+\rangle
+          <MathText text="التشابك الكمي المزدوج · Bell State $|\Phi^+\rangle$" />
         </span>
 
         <h3 className="mt-4 text-xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">
