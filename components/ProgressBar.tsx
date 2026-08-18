@@ -49,14 +49,14 @@ export function ProgressBar({
         aria-valuemax={100}
         aria-label={label}
         className={cn(
-          "w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-slate-700/60",
+          "w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-brand-800/60",
           sizes[size],
         )}
       >
         <div
           className={cn(
             "h-full rounded-full transition-[width] duration-500 ease-out",
-            "bg-gradient-to-l from-sky-500 to-cyan-400",
+            "bg-gradient-to-l from-brand-600 to-brand-400",
             barClassName,
           )}
           style={{ width: `${pct}%` }}

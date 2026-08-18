@@ -49,7 +49,7 @@ export function ExercisesBrowser({ exercises }: { exercises: Exercise[] }) {
           <button
             type="button"
             onClick={() => setFilters(INITIAL_FILTERS)}
-            className="mt-5 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="mt-5 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
           >
             إعادة ضبط الفلاتر
           </button>

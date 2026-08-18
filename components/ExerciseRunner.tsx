@@ -171,7 +171,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
       result.accuracy >= 90
         ? { text: "أداء ممتاز", tone: "text-emerald-600 dark:text-emerald-400" }
         : result.accuracy >= 70
-          ? { text: "أداء جيد جداً", tone: "text-sky-600 dark:text-sky-400" }
+          ? { text: "أداء جيد جداً", tone: "text-brand-600 dark:text-brand-400" }
           : result.accuracy >= 50
             ? { text: "أداء مقبول", tone: "text-amber-600 dark:text-amber-400" }
             : { text: "يحتاج مراجعة", tone: "text-rose-600 dark:text-rose-400" };
@@ -179,7 +179,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
     return (
       <div ref={topRef} className="space-y-6">
         <section className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-10 dark:border-slate-800 dark:bg-slate-900">
-          <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-violet-500 text-white">
+          <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-400 text-white dark:from-gold-500 dark:to-gold-300 dark:text-brand-950">
             <Trophy className="h-8 w-8" />
           </span>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -245,7 +245,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
             {nextExercise ? (
               <Link
                 href={`/exercises/${nextExercise.slug}`}
-                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
               >
                 التمرين التالي: {nextExercise.titleAr}
                 <ArrowLeft className="h-4 w-4" />
@@ -253,7 +253,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
             ) : (
               <Link
                 href="/exercises"
-                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
               >
                 العودة إلى دليل التمارين
                 <ArrowLeft className="h-4 w-4" />
@@ -365,7 +365,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
               {paused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
             </button>
             {streak > 1 && (
-              <span className="flex items-center gap-1 rounded-lg bg-amber-100 px-2.5 py-1.5 text-xs font-bold text-amber-800 dark:bg-amber-500/15 dark:text-amber-300">
+              <span className="flex items-center gap-1 rounded-lg bg-gold-100 px-2.5 py-1.5 text-xs font-bold text-gold-800 dark:bg-gold-400/15 dark:text-gold-300">
                 <Flame className="h-3.5 w-3.5" />
                 {streak} متتالية
               </span>
@@ -390,7 +390,7 @@ export function ExerciseRunner({ exercise, nextExercise }: ExerciseRunnerProps) 
           <button
             type="button"
             onClick={() => setPaused(false)}
-            className="mt-5 inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-700"
+            className="mt-5 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
           >
             <Play className="h-4 w-4" />
             استئناف

@@ -108,7 +108,7 @@ export default async function ExercisePage({ params }: PageProps) {
 
         <details className="mt-4 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
           <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
-            <Target className="h-4 w-4 text-sky-500" />
+            <Target className="h-4 w-4 text-brand-500" />
             أهداف هذه الوحدة
           </summary>
           <ul className="mt-3 space-y-2">
@@ -117,7 +117,7 @@ export default async function ExercisePage({ params }: PageProps) {
                 key={objective}
                 className="flex gap-2 text-sm text-slate-600 dark:text-slate-400"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
                 {objective}
               </li>
             ))}

@@ -12,9 +12,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "الحالات النقية، كرة بلوخ، متجهات الحالة، الضرب الداخلي والخارجي، وشرط التطبيع.",
     icon: "Atom",
-    gradient: "from-sky-500 to-cyan-400",
+    gradient: "from-brand-500 to-brand-300",
     badgeClass:
-      "bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300 ring-sky-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
   {
     id: "gates",
@@ -23,9 +23,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "بوابات باولي X و Y و Z، بوابة هادامارد، بوابات الطور S و T، وبوابات التحكم CNOT و Toffoli و SWAP.",
     icon: "ToggleRight",
-    gradient: "from-violet-500 to-fuchsia-400",
+    gradient: "from-brand-600 to-brand-400",
     badgeClass:
-      "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300 ring-violet-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
   {
     id: "circuits",
@@ -34,9 +34,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "حالات بيل، حالات GHZ، الضرب التنسوري، والتكافؤ بين الدوائر الكمية.",
     icon: "Workflow",
-    gradient: "from-emerald-500 to-teal-400",
+    gradient: "from-emerald-600 to-brand-400",
     badgeClass:
-      "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300 ring-emerald-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
   {
     id: "measurement",
@@ -45,9 +45,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "قاعدة بورن، مؤثرات الإسقاط، الحالات المختلطة، النقاء، والأثر الجزئي.",
     icon: "Gauge",
-    gradient: "from-amber-500 to-orange-400",
+    gradient: "from-brand-700 to-brand-500",
     badgeClass:
-      "bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-300 ring-amber-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
   {
     id: "algorithms",
@@ -56,9 +56,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "النقل الآني الكمي، دويتش-جوزا، خوارزمية غروفر للبحث، وأساسيات خوارزمية شور.",
     icon: "Binary",
-    gradient: "from-rose-500 to-pink-400",
+    gradient: "from-teal-600 to-brand-400",
     badgeClass:
-      "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300 ring-rose-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
   {
     id: "qec",
@@ -67,9 +67,9 @@ export const CATEGORIES: Category[] = [
     descriptionAr:
       "التفكك الكمي، أكواد قلب البت والطور، كود شور، المُثبِّتات، وأنظمة NISQ.",
     icon: "ShieldCheck",
-    gradient: "from-indigo-500 to-blue-400",
+    gradient: "from-brand-800 to-brand-600",
     badgeClass:
-      "bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300 ring-indigo-500/20",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/20",
   },
 ];
 
@@ -80,7 +80,7 @@ export const DIFFICULTIES: Difficulty[] = [
     nameEn: "Beginner",
     rank: 1,
     badgeClass:
-      "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300 ring-emerald-500/25",
+      "bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-300 ring-brand-400/25",
   },
   {
     id: "intermediate",
@@ -88,7 +88,7 @@ export const DIFFICULTIES: Difficulty[] = [
     nameEn: "Intermediate",
     rank: 2,
     badgeClass:
-      "bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300 ring-sky-500/25",
+      "bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 ring-brand-500/25",
   },
   {
     id: "advanced",
@@ -96,7 +96,7 @@ export const DIFFICULTIES: Difficulty[] = [
     nameEn: "Advanced",
     rank: 3,
     badgeClass:
-      "bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-300 ring-amber-500/25",
+      "bg-brand-200 text-brand-800 dark:bg-brand-600/25 dark:text-brand-200 ring-brand-600/30",
   },
   {
     id: "expert",
@@ -104,7 +104,7 @@ export const DIFFICULTIES: Difficulty[] = [
     nameEn: "Expert",
     rank: 4,
     badgeClass:
-      "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300 ring-rose-500/25",
+      "bg-brand-700 text-white dark:bg-brand-600 dark:text-white ring-brand-700/40",
   },
 ];
 

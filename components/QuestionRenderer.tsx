@@ -111,7 +111,7 @@ export function QuestionRenderer({
                       "disabled:cursor-default",
                       !checked &&
                         (selected
-                          ? "border-sky-500 bg-sky-50 ring-2 ring-sky-500/20 dark:border-sky-400 dark:bg-sky-500/10"
+                          ? "border-brand-500 bg-brand-50 ring-2 ring-brand-500/20 dark:border-brand-400 dark:bg-brand-500/10"
                           : "border-slate-200 hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:hover:border-slate-600 dark:hover:bg-slate-800/60"),
                       showAsCorrect &&
                         "border-emerald-500 bg-emerald-50 dark:border-emerald-500 dark:bg-emerald-500/10",
@@ -131,7 +131,7 @@ export function QuestionRenderer({
                           : showAsWrong
                             ? "bg-rose-500 text-white"
                             : selected
-                              ? "bg-sky-500 text-white"
+                              ? "bg-brand-500 text-white"
                               : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400",
                       )}
                     >
@@ -198,7 +198,7 @@ export function QuestionRenderer({
                     }}
                     className={cn(
                       "w-full rounded-lg border bg-white px-3 py-2.5 text-start font-mono text-sm outline-none transition",
-                      "border-slate-200 focus:border-sky-400 focus:ring-4 focus:ring-sky-500/10",
+                      "border-slate-200 focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10",
                       "disabled:bg-slate-50 disabled:text-slate-500",
                       "dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:disabled:bg-slate-900",
                     )}
@@ -271,7 +271,7 @@ export function QuestionRenderer({
             <ol className="mb-3 space-y-3">
               {question.steps.map((step, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white dark:bg-white dark:text-slate-900">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white dark:bg-gold-400 dark:text-brand-950">
                     {index + 1}
                   </span>
                   <div className="min-w-0 flex-1">
@@ -312,7 +312,7 @@ export function QuestionRenderer({
             className={cn(
               "flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition",
               canCheck
-                ? "bg-sky-600 text-white hover:bg-sky-700"
+                ? "bg-brand-600 text-white hover:bg-brand-700"
                 : "cursor-not-allowed bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-600",
             )}
           >
@@ -322,7 +322,7 @@ export function QuestionRenderer({
           <button
             type="button"
             onClick={onNext}
-            className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
           >
             {isLast ? "عرض النتيجة النهائية" : "السؤال التالي"}
             <ArrowLeft className="h-4 w-4" />

@@ -8,7 +8,7 @@ import { Compass } from "lucide-react";
 export default function NotFound() {
   return (
     <div className="mx-auto flex max-w-xl flex-col items-center px-4 py-24 text-center">
-      <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">
+      <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white dark:bg-gold-400 dark:text-brand-950">
         <Compass className="h-7 w-7" />
       </span>
       <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">
@@ -19,7 +19,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/exercises"
-        className="mt-6 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+        className="mt-6 rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
       >
         تصفّح التمارين
       </Link>

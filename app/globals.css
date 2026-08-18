@@ -5,7 +5,52 @@
 
 @theme {
   --font-sans: var(--font-tajawal), "Segoe UI", system-ui, sans-serif;
-  --font-mono: "SFMono-Regular", ui-monospace, "Cascadia Code", monospace;
+  --font-mono: "SFMono-Regular", ui-monospace, "Cascadia Code", "Consolas", monospace;
+
+  /* ---------------------------------------------------------------- */
+  /* هوية العلامة: زمرّدي ملكي وذهبي — Royal emerald & gold identity  */
+  /* ---------------------------------------------------------------- */
+  --color-brand-50:  #EEFBF0;
+  --color-brand-100: #D0F4D8;
+  --color-brand-200: #A0E8B2;
+  --color-brand-300: #60D47C;
+  --color-brand-400: #30B050;
+  --color-brand-500: #1C8C28;
+  --color-brand-600: #136207;
+  --color-brand-700: #104F09;
+  --color-brand-800: #052D1E;
+  --color-brand-900: #021A0F;
+  --color-brand-950: #010E08;
+
+  /* ---------------------------------------------------------------- */
+  /* ذهبي — لمسات التميّز والإنجازات  Gold accent scale               */
+  /* ---------------------------------------------------------------- */
+  --color-gold-50:  #FDF9EE;
+  --color-gold-100: #FAF0D4;
+  --color-gold-200: #F3DDA3;
+  --color-gold-300: #E8C55F;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #BF9B26;
+  --color-gold-600: #A17E18;
+  --color-gold-700: #7D6114;
+  --color-gold-800: #5C4710;
+  --color-gold-900: #3D2F0C;
+  --color-gold-950: #241C08;
+
+  /* ---------------------------------------------------------------- */
+  /* الحياديات مضبوطة على مسحة زمردية لتتناغم مع العلامة               */
+  /* ---------------------------------------------------------------- */
+  --color-slate-50:  #F4FBF7;
+  --color-slate-100: #E2F2E9;
+  --color-slate-200: #CCE3D5;
+  --color-slate-300: #A4C5B0;
+  --color-slate-400: #6E9A80;
+  --color-slate-500: #4E7762;
+  --color-slate-600: #385A47;
+  --color-slate-700: #234435;
+  --color-slate-800: #0E3022;
+  --color-slate-900: #052D1E;
+  --color-slate-950: #021A0F;
 }
 
 @layer base {
@@ -23,23 +68,21 @@
   }
 
   .dark body {
-    background-color: var(--color-slate-950);
+    background-color: var(--color-brand-950);
     color: var(--color-slate-100);
   }
 
-  /* حلقة تركيز واضحة للتنقّل بلوحة المفاتيح */
   :focus-visible {
-    outline: 2px solid var(--color-sky-500);
+    outline: 2px solid var(--color-gold-400);
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: color-mix(in oklab, var(--color-sky-500) 25%, transparent);
+    background-color: color-mix(in oklab, var(--color-gold-400) 28%, transparent);
   }
 }
 
 @layer components {
-  /* KaTeX داخل صفحة RTL: نُثبّت الاتجاه ونمنع الفيض الأفقي */
   .katex {
     direction: ltr;
     unicode-bidi: isolate;
@@ -53,25 +96,90 @@
     overflow-y: hidden;
   }
 
-  /* تحسين مظهر شريط التمرير للمعادلات العريضة */
   .katex-display::-webkit-scrollbar {
     height: 6px;
   }
 
   .katex-display::-webkit-scrollbar-thumb {
-    background-color: color-mix(in oklab, var(--color-slate-400) 45%, transparent);
+    background-color: color-mix(in oklab, var(--color-brand-500) 45%, transparent);
     border-radius: 9999px;
   }
 }
 
-/* خلفية زخرفية خفيفة لصفحة البداية */
 .quantum-grid {
   background-image:
     radial-gradient(
       circle at 1px 1px,
-      color-mix(in oklab, var(--color-slate-400) 35%, transparent) 1px,
+      color-mix(in oklab, var(--color-brand-600) 30%, transparent) 1px,
       transparent 0
     );
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/* محرّر الشيفرة: طبقة تلوين تحت منطقة إدخال شفافة                     */
+/* ------------------------------------------------------------------ */
+.code-surface {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  tab-size: 4;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* ألوان التلوين النحوي — نهاري */
+.tok-keyword {
+  color: #104F09;
+  font-weight: 600;
+}
+.tok-builtin {
+  color: #136207;
+}
+.tok-string {
+  color: #A17E18;
+}
+.tok-number {
+  color: #7c3aed;
+}
+.tok-comment {
+  color: #6E9A80;
+  font-style: italic;
+}
+.tok-operator {
+  color: #385A47;
+}
+.tok-def {
+  color: #136207;
+  font-weight: 600;
+}
+
+/* ألوان التلوين النحوي — ليلي: يشب وذهب */
+.dark .tok-keyword {
+  color: #60D47C;
+  font-weight: 600;
+}
+.dark .tok-builtin {
+  color: #30B050;
+}
+.dark .tok-string {
+  color: #E8C55F;
+}
+.dark .tok-number {
+  color: #A0E8B2;
+}
+.dark .tok-comment {
+  color: #6E9A80;
+  font-style: italic;
+}
+.dark .tok-operator {
+  color: #A4C5B0;
+}
+.dark .tok-def {
+  color: #D4AF37;
+  font-weight: 600;
 }

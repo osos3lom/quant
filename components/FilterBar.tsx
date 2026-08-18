@@ -37,7 +37,7 @@ function Chip({
       className={cn(
         "rounded-full px-3.5 py-1.5 text-sm font-medium transition",
         active
-          ? "bg-slate-900 text-white shadow-sm dark:bg-white dark:text-slate-900"
+          ? "bg-slate-900 text-white shadow-sm dark:bg-gold-400 dark:text-brand-950"
           : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700",
       )}
     >
@@ -64,8 +64,8 @@ export function FilterBar({ filters, onChange, resultCount }: FilterBarProps) {
           className={cn(
             "w-full rounded-2xl border py-3.5 ps-11 pe-4 text-sm outline-none transition",
             "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400",
-            "focus:border-sky-400 focus:ring-4 focus:ring-sky-500/10",
-            "dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-sky-500",
+            "focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10",
+            "dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-brand-500",
           )}
         />
         {filters.query && (
@@ -143,7 +143,7 @@ export function FilterBar({ filters, onChange, resultCount }: FilterBarProps) {
           <button
             type="button"
             onClick={() => onChange({ query: "", category: "all", difficulty: "all" })}
-            className="text-sm font-medium text-sky-600 hover:underline dark:text-sky-400"
+            className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-400"
           >
             إعادة ضبط الفلاتر
           </button>

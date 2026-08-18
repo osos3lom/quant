@@ -177,6 +177,8 @@ export interface ExerciseProgress {
 /** الحالة الكاملة المحفوظة في localStorage. */
 export interface ProgressState {
   version: number;
+  /** تقدّم دفاتر الدروس، مفهرساً بـ `${track}/${slug}` */
+  lessons: Record<string, import("./lessons").LessonProgressEntry>;
   /** نقاط الخبرة التراكمية */
   xp: number;
   /** سلسلة الأيام المتتالية للنشاط */

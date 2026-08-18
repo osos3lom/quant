@@ -85,13 +85,13 @@ export function StatsPanel() {
           icon={Award}
           value={String(progress.xp)}
           label="نقطة خبرة"
-          tone="bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300"
+          tone="bg-gold-100 text-gold-700 dark:bg-gold-400/15 dark:text-gold-300"
         />
         <StatCard
           icon={Target}
           value={`${accuracy}%`}
           label="الدقة الكلية"
-          tone="bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300"
+          tone="bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300"
         />
         <StatCard
           icon={Flame}
@@ -125,7 +125,7 @@ export function StatsPanel() {
         <ProgressBar
           value={levelProgress}
           size="lg"
-          barClassName="bg-gradient-to-l from-violet-500 to-fuchsia-400"
+          barClassName="bg-gradient-to-l from-brand-600 to-brand-400"
         />
       </section>
 
@@ -182,7 +182,7 @@ export function StatsPanel() {
                     barClassName={
                       entry?.completed
                         ? "bg-gradient-to-l from-emerald-500 to-teal-400"
-                        : "bg-gradient-to-l from-sky-500 to-cyan-400"
+                        : "bg-gradient-to-l from-brand-600 to-brand-400"
                     }
                   />
                 </div>
@@ -257,7 +257,7 @@ export function StatsPanel() {
           </p>
           <Link
             href="/exercises"
-            className="mt-5 inline-block rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="mt-5 inline-block rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
           >
             تصفّح التمارين
           </Link>

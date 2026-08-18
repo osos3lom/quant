@@ -17,7 +17,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
         <div className="quantum-grid absolute inset-0 -z-10" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-300">
             <Sparkles className="h-3.5 w-3.5" />
             {EXERCISES.length} وحدات · {TOTAL_QUESTIONS} سؤالاً تفاعلياً
           </span>
@@ -25,7 +25,7 @@ export default function HomePage() {
           <h1 className="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl dark:text-white">
             أتقن الحوسبة الكمية
             <br />
-            <span className="bg-gradient-to-l from-sky-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-l from-brand-700 via-brand-600 to-brand-400 bg-clip-text text-transparent dark:from-gold-400 dark:via-brand-400 dark:to-brand-300">
               بالتمرين لا بالحفظ
             </span>
           </h1>
@@ -46,7 +46,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/exercises"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
             >
               <BookOpen className="h-4 w-4" />
               ابدأ التمارين
@@ -98,7 +98,7 @@ export default function HomePage() {
                 <p className="mt-2.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {category.descriptionAr}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-400">
                   ابدأ المسار
                   <ArrowLeft className="h-4 w-4 transition group-hover:-translate-x-0.5" />
                 </span>

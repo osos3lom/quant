@@ -43,7 +43,7 @@ export default function CheatsheetPage() {
         {CHEATSHEET.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-20">
             <h2 className="mb-4 flex items-center gap-2.5 text-lg font-bold text-slate-900 sm:text-xl dark:text-white">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white dark:bg-gold-400 dark:text-brand-950">
                 <CategoryIcon name={section.icon} className="h-4 w-4" />
               </span>
               {section.title}

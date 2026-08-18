@@ -48,7 +48,7 @@ export function ThemeToggle({ className }: { className?: string }) {
         "inline-flex h-9 w-9 items-center justify-center rounded-xl",
         "border border-slate-200 bg-white/70 text-slate-600 transition",
         "hover:bg-slate-100 hover:text-slate-900",
-        "dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white",
+        "dark:border-gold-700/40 dark:bg-slate-900/70 dark:text-gold-300 dark:hover:bg-gold-400/10 dark:hover:text-gold-200",
         className,
       )}
     >

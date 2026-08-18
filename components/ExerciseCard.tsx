@@ -125,7 +125,7 @@ export function ExerciseCard({ exercise }: { exercise: Exercise }) {
         className={cn(
           "flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition",
           "bg-slate-900 text-white hover:bg-slate-700",
-          "dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200",
+          "dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300",
         )}
       >
         {finished ? "إعادة التمرين" : started ? "متابعة التمرين" : "ابدأ التمرين"}

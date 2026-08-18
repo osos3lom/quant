@@ -7,7 +7,9 @@ import {
   Binary,
   Gauge,
   ShieldCheck,
+  Sprout,
   ToggleRight,
+  Trophy,
   Workflow,
   type LucideIcon,
 } from "lucide-react";
@@ -19,6 +21,8 @@ const ICONS: Record<string, LucideIcon> = {
   Gauge,
   Binary,
   ShieldCheck,
+  Sprout,
+  Trophy,
 };
 
 interface CategoryIconProps {

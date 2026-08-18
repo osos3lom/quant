@@ -5,6 +5,7 @@
  */
 "use client";
 
+import type { LessonProgressEntry, TrackId } from "@/types/lessons";
 import type {
   AttemptRecord,
   ExerciseProgress,
@@ -20,6 +21,7 @@ const MAX_HISTORY = 30;
 export function emptyProgress(): ProgressState {
   return {
     version: 1,
+    lessons: {},
     xp: 0,
     dayStreak: 0,
     bestDayStreak: 0,
@@ -57,6 +59,10 @@ export function loadProgress(): ProgressState {
     cache = { ...emptyProgress(), ...parsed };
     if (typeof cache.exercises !== "object" || cache.exercises === null) {
       cache.exercises = {};
+    }
+    // الحقل أُضيف بعد الإصدار الأول، فقد تكون النسخة المحفوظة بلا دروس
+    if (typeof cache.lessons !== "object" || cache.lessons === null) {
+      cache.lessons = {};
     }
     if (!Array.isArray(cache.history)) cache.history = [];
     return cache;
@@ -226,6 +232,117 @@ export function completeExercise(
 /** حذف كل بيانات التقدّم. */
 export function resetProgress(): ProgressState {
   return commit(emptyProgress());
+}
+
+/* ------------------------------------------------------------------ */
+/* دفاتر الدروس — lesson notebooks                                     */
+/* ------------------------------------------------------------------ */
+
+/** مفتاح التخزين لدفتر واحد. */
+export function lessonKey(track: TrackId, slug: string): string {
+  return `${track}/${slug}`;
+}
+
+function lessonEntry(
+  state: ProgressState,
+  track: TrackId,
+  slug: string,
+): LessonProgressEntry {
+  return (
+    state.lessons[lessonKey(track, slug)] ?? {
+      slug,
+      track,
+      ranCells: [],
+      solvedExercises: [],
+      completed: false,
+      updatedAt: new Date().toISOString(),
+    }
+  );
+}
+
+/** يسجّل تشغيل خلية شيفرة داخل دفتر. */
+export function recordCellRun(
+  track: TrackId,
+  slug: string,
+  cellId: string,
+): ProgressState {
+  const state = withDayStreak(loadProgress());
+  const entry = lessonEntry(state, track, slug);
+  if (entry.ranCells.includes(cellId)) return commit(state);
+
+  const next: LessonProgressEntry = {
+    ...entry,
+    ranCells: [...entry.ranCells, cellId],
+    updatedAt: new Date().toISOString(),
+  };
+
+  return commit({
+    ...state,
+    lessons: { ...state.lessons, [lessonKey(track, slug)]: next },
+  });
+}
+
+/** يسجّل حل تمرين داخل دفتر ويمنح نقاط الخبرة مرة واحدة فقط. */
+export function recordExerciseSolved(
+  track: TrackId,
+  slug: string,
+  cellId: string,
+  points: number,
+): ProgressState {
+  const state = withDayStreak(loadProgress());
+  const entry = lessonEntry(state, track, slug);
+  if (entry.solvedExercises.includes(cellId)) return commit(state);
+
+  const next: LessonProgressEntry = {
+    ...entry,
+    solvedExercises: [...entry.solvedExercises, cellId],
+    updatedAt: new Date().toISOString(),
+  };
+
+  return commit({
+    ...state,
+    xp: state.xp + points,
+    lessons: { ...state.lessons, [lessonKey(track, slug)]: next },
+  });
+}
+
+/** يعلّم الدفتر مكتملاً. */
+export function markNotebookCompleted(track: TrackId, slug: string): ProgressState {
+  const state = withDayStreak(loadProgress());
+  const entry = lessonEntry(state, track, slug);
+  // لا نُخطر المشتركين إن لم يتغيّر شيء، كي لا تتكرّر دورة التصيير
+  if (entry.completed) return state;
+
+  return commit({
+    ...state,
+    lessons: {
+      ...state.lessons,
+      [lessonKey(track, slug)]: {
+        ...entry,
+        completed: true,
+        updatedAt: new Date().toISOString(),
+      },
+    },
+  });
+}
+
+/**
+ * نسبة إنجاز دفتر واحد (0–100):
+ * تُحتسب من خلايا الشيفرة المُشغَّلة والتمارين المحلولة معاً.
+ */
+export function notebookCompletion(
+  state: ProgressState,
+  track: TrackId,
+  slug: string,
+  totalRunnable: number,
+  totalExercises: number,
+): number {
+  const entry = state.lessons[lessonKey(track, slug)];
+  if (!entry) return 0;
+  const total = totalRunnable + totalExercises;
+  if (!total) return entry.completed ? 100 : 0;
+  const done = entry.ranCells.length + entry.solvedExercises.length;
+  return Math.min(100, Math.round((done / total) * 100));
 }
 
 /* ------------------------------------------------------------------ */
