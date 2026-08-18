@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* الوضع الليلي يعتمد على الصنف .dark لا على تفضيل النظام وحده */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-tajawal), "Segoe UI", system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", ui-monospace, "Cascadia Code", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-900);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dark body {
+    background-color: var(--color-slate-950);
+    color: var(--color-slate-100);
+  }
+
+  /* حلقة تركيز واضحة للتنقّل بلوحة المفاتيح */
+  :focus-visible {
+    outline: 2px solid var(--color-sky-500);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-sky-500) 25%, transparent);
+  }
+}
+
+@layer components {
+  /* KaTeX داخل صفحة RTL: نُثبّت الاتجاه ونمنع الفيض الأفقي */
+  .katex {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-size: 1em;
+  }
+
+  .katex-display {
+    margin: 0;
+    padding-block: 0.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* تحسين مظهر شريط التمرير للمعادلات العريضة */
+  .katex-display::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .katex-display::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklab, var(--color-slate-400) 45%, transparent);
+    border-radius: 9999px;
+  }
+}
+
+/* خلفية زخرفية خفيفة لصفحة البداية */
+.quantum-grid {
+  background-image:
+    radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--color-slate-400) 35%, transparent) 1px,
+      transparent 0
+    );
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
