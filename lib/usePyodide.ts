@@ -113,7 +113,7 @@ class KernelManager {
     });
   }
 
-  /** ينفّذ شيفرة داخل نطاق دفتر محدّد ويعيد المخرجات. */
+  /** ينفّذ كود داخل نطاق دفتر محدّد ويعيد المخرجات. */
   run(key: string, code: string): Promise<Omit<ExecutionResult, "executionCount">> {
     const worker = this.ensureWorker();
     if (this.status !== "ready") this.emit("loading", "تحميل نواة بايثون…");
@@ -163,9 +163,9 @@ export function getKernel(): KernelManager {
 export interface UsePyodide {
   status: KernelStatus;
   detail: string;
-  /** هل النواة جاهزة لتنفيذ الشيفرة */
+  /** هل النواة جاهزة لتنفيذ الكود */
   ready: boolean;
-  /** ينفّذ شيفرة في نطاق هذا الدفتر */
+  /** ينفّذ كود في نطاق هذا الدفتر */
   run: (code: string) => Promise<Omit<ExecutionResult, "executionCount">>;
   /** يبدأ التحميل يدوياً */
   preload: () => void;

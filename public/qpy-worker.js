@@ -180,7 +180,7 @@ self.onmessage = async (event) => {
       const runtime = await ensureReady();
       const startedAt = performance.now();
 
-      // تحميل الحزم المطلوبة تلقائياً من جُمَل import داخل الشيفرة
+      // تحميل الحزم المطلوبة تلقائياً من جُمَل import داخل الكود
       try {
         await runtime.loadPackagesFromImports(code);
       } catch {

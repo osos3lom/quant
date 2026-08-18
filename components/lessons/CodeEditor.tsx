@@ -1,6 +1,6 @@
 /**
  * components/lessons/CodeEditor.tsx
- * محرّر شيفرة بايثون بأسلوب Colab: أرقام أسطر، تلوين نحوي، وإزاحة تلقائية.
+ * محرّر كود بايثون بأسلوب Colab: أرقام أسطر، تلوين نحوي، وإزاحة تلقائية.
  * الاتجاه داخل المحرّر LTR دائماً حتى داخل صفحة RTL.
  */
 "use client";
@@ -260,7 +260,7 @@ export function CodeEditor({
           autoCorrect="off"
           autoComplete="off"
           dir="ltr"
-          aria-label="محرّر شيفرة بايثون"
+          aria-label="محرّر كود بايثون"
           onChange={(event) => onChange(event.target.value)}
           onKeyDown={handleKeyDown}
           onScroll={(event) => {

@@ -23,12 +23,12 @@ export function NotebookCard({ notebook }: { notebook: Notebook }) {
     : undefined;
   const completion = mounted
     ? notebookCompletion(
-        progress,
-        notebook.track,
-        notebook.slug,
-        stats.runnable,
-        stats.exercises,
-      )
+      progress,
+      notebook.track,
+      notebook.slug,
+      stats.runnable,
+      stats.exercises,
+    )
     : 0;
 
   return (
@@ -71,7 +71,7 @@ export function NotebookCard({ notebook }: { notebook: Notebook }) {
           </span>
           <span className="flex items-center gap-1">
             <Code2 className="h-3.5 w-3.5" />
-            {stats.runnable} خلايا شيفرة
+            {stats.runnable} خلايا كود
           </span>
           <span className="flex items-center gap-1">
             <Trophy className="h-3.5 w-3.5" />

@@ -66,7 +66,7 @@ export interface MarkdownCell extends CellBase {
   calloutTitle?: string;
 }
 
-/** خلية شيفرة توضيحية: قابلة للتعديل والتشغيل. */
+/** خلية كود توضيحية: قابلة للتعديل والتشغيل. */
 export interface CodeCell extends CellBase {
   kind: "code";
   code: string;
@@ -81,14 +81,14 @@ export interface ExerciseCell extends CellBase {
   kind: "exercise";
   /** نص المسألة بصيغة Markdown عربية */
   prompt: string;
-  /** الشيفرة الابتدائية التي تظهر للمتدرّب */
+  /** الكود الابتدائية التي تظهر للمتدرّب */
   template: string;
   /** تلميحات متدرّجة قابلة للطي */
   hints: string[];
   /** الحل النموذجي */
   solution: string;
   /**
-   * شيفرة بايثون للتحقق تعمل في نطاق الدفتر نفسه بعد تشغيل حل المتدرّب.
+   * كود بايثون للتحقق تعمل في نطاق الدفتر نفسه بعد تشغيل حل المتدرّب.
    * تنجح إن لم تُطلق استثناءً، وتفشل عبر assert برسالة عربية.
    */
   validator: string;
@@ -162,7 +162,7 @@ export interface ExecutionResult {
 export interface LessonProgressEntry {
   slug: string;
   track: TrackId;
-  /** مُعرّفات خلايا الشيفرة التي شُغِّلت */
+  /** مُعرّفات خلايا الكود التي شُغِّلت */
   ranCells: string[];
   /** مُعرّفات التمارين التي نجح المتدرّب فيها */
   solvedExercises: string[];

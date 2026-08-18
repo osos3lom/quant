@@ -31,7 +31,7 @@ import { cn } from "@/lib/utils";
 import { ProgressBar } from "@/components/ProgressBar";
 import { NotebookCell, type ExerciseVerdict } from "./NotebookCell";
 
-/** الشيفرة الأصلية لخلية قابلة للتشغيل. */
+/** الكود الأصلية لخلية قابلة للتشغيل. */
 function initialCode(cell: LessonCell): string {
   if (cell.kind === "code") return cell.code;
   if (cell.kind === "exercise") return cell.template;
@@ -53,9 +53,8 @@ function verdictFromValidation(result: Omit<ExecutionResult, "executionCount">):
 
   return {
     passed: false,
-    message: `لم يكتمل التحقق بسبب ${result.error.type}: ${
-      result.error.message || "راجع الشيفرة أعلاه"
-    }`,
+    message: `لم يكتمل التحقق بسبب ${result.error.type}: ${result.error.message || "راجع الكود أعلاه"
+      }`,
   };
 }
 
@@ -95,7 +94,7 @@ export function NotebookPlayer({ notebook, nextNotebook }: NotebookPlayerProps) 
 
   const busy = kernel.status === "loading" || runningAll;
 
-  /** ينفّذ شيفرة خلية ويحدّث حالتها ومخرجاتها. */
+  /** ينفّذ كود خلية ويحدّث حالتها ومخرجاتها. */
   const executeCell = useCallback(
     async (cell: LessonCell, source: string) => {
       setStatuses((previous) => ({ ...previous, [cell.id]: "running" }));
@@ -145,7 +144,7 @@ export function NotebookPlayer({ notebook, nextNotebook }: NotebookPlayerProps) 
     [codes, executeCell],
   );
 
-  /** يشغّل حل المتدرّب ثم شيفرة التحقق في النطاق نفسه. */
+  /** يشغّل حل المتدرّب ثم كود التحقق في النطاق نفسه. */
   const handleCheck = useCallback(
     async (cell: LessonCell) => {
       if (cell.kind !== "exercise") return;
@@ -187,7 +186,7 @@ export function NotebookPlayer({ notebook, nextNotebook }: NotebookPlayerProps) 
     [codes, executeCell, kernel, notebook.slug, notebook.track],
   );
 
-  /** يشغّل كل خلايا الشيفرة بالترتيب. */
+  /** يشغّل كل خلايا الكود بالترتيب. */
   const handleRunAll = useCallback(async () => {
     setRunningAll(true);
     try {

@@ -110,11 +110,51 @@
   background-image:
     radial-gradient(
       circle at 1px 1px,
-      color-mix(in oklab, var(--color-brand-600) 30%, transparent) 1px,
+      color-mix(in oklab, var(--color-brand-500) 25%, transparent) 1px,
       transparent 0
     );
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 50%, transparent 100%);
+}
+
+.quantum-glow-emerald {
+  box-shadow: 0 0 50px -10px rgba(48, 176, 80, 0.35);
+}
+
+.quantum-glow-gold {
+  box-shadow: 0 0 50px -10px rgba(212, 175, 55, 0.35);
+}
+
+.quantum-glass {
+  background: rgba(8, 26, 17, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(48, 176, 80, 0.15);
+}
+
+.dark .quantum-glass {
+  background: rgba(2, 14, 8, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(48, 176, 80, 0.2);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 /* ------------------------------------------------------------------ */

@@ -260,7 +260,7 @@ function lessonEntry(
   );
 }
 
-/** يسجّل تشغيل خلية شيفرة داخل دفتر. */
+/** يسجّل تشغيل خلية كود داخل دفتر. */
 export function recordCellRun(
   track: TrackId,
   slug: string,
@@ -328,7 +328,7 @@ export function markNotebookCompleted(track: TrackId, slug: string): ProgressSta
 
 /**
  * نسبة إنجاز دفتر واحد (0–100):
- * تُحتسب من خلايا الشيفرة المُشغَّلة والتمارين المحلولة معاً.
+ * تُحتسب من خلايا الكود المُشغَّلة والتمارين المحلولة معاً.
  */
 export function notebookCompletion(
   state: ProgressState,

@@ -1,7 +1,7 @@
 /**
  * components/lessons/Markdown.tsx
  * عارض Markdown مبسّط للشرح العربي داخل الدفاتر:
- * عناوين، قوائم، غامق، شيفرة سطرية، كتل شيفرة، ورياضيات KaTeX بالاتجاه LTR.
+ * عناوين، قوائم، غامق، كود سطرية، كتل كود، ورياضيات KaTeX بالاتجاه LTR.
  */
 "use client";
 
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 /* العناصر السطرية                                                     */
 /* ------------------------------------------------------------------ */
 
-/** يعالج الغامق والشيفرة السطرية داخل مقطع نصي خالٍ من الرياضيات. */
+/** يعالج الغامق والكود السطرية داخل مقطع نصي خالٍ من الرياضيات. */
 function renderEmphasis(text: string, keyPrefix: string): ReactNode[] {
   return text
     .split(/(\*\*[^*]+\*\*|`[^`]+`)/g)
@@ -71,7 +71,7 @@ export function Markdown({ content, className }: { content: string; className?: 
   /**
    * نصوص الدروس تُكتب داخل String.raw كي تبقى رموز LaTeX سليمة، وداخلها لا يمكن
    * كتابة العلامة ` إلا مسبوقة بشرطة مائلة عكسية، فتصل إلينا بالصورة \`.
-   * نُطبّعها هنا قبل التحليل كي تُعرض الشيفرة السطرية كما هو متوقّع.
+   * نُطبّعها هنا قبل التحليل كي تُعرض الكود السطرية كما هو متوقّع.
    */
   const lines = content.replace(/\\`/g, "`").split("\n");
   const blocks: ReactNode[] = [];
@@ -93,7 +93,7 @@ export function Markdown({ content, className }: { content: string; className?: 
     const line = lines[index];
     const trimmed = line.trim();
 
-    // كتلة شيفرة ```python
+    // كتلة كود ```python
     if (trimmed.startsWith("```")) {
       flushParagraph();
       const body: string[] = [];

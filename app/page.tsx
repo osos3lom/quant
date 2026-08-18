@@ -1,112 +1,106 @@
 /**
  * app/page.tsx
- * الصفحة الرئيسية: نظرة عامة على المنصة والتصنيفات الستة.
+ * الصفحة الرئيسية: تجربة تفاعلية وبصرية غامضة وسينمائية للحوسبة الكمية.
+ * تدعم الوضعين الليلي والنهاري والاستجابة الكاملة للأجهزة الذكية.
  */
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Sigma, Sparkles } from "lucide-react";
-import { CATEGORIES } from "@/data/taxonomy";
 import { EXERCISES, TOTAL_QUESTIONS } from "@/data/exercises";
-import { CategoryIcon } from "@/components/CategoryIcon";
-import { KaTeXMath } from "@/components/KaTeXMath";
-import { cn } from "@/lib/utils";
+import { QuantumHeroCanvas } from "@/components/quantum/QuantumHeroCanvas";
+import { ParadigmShiftVisualizer } from "@/components/quantum/ParadigmShiftVisualizer";
+import { BlochSphereInteractive } from "@/components/quantum/BlochSphereInteractive";
+import { QuantumEntanglementCanvas } from "@/components/quantum/QuantumEntanglementCanvas";
+import { QuantumPillarsExplorer } from "@/components/quantum/QuantumPillarsExplorer";
+import { QuantumProofLab } from "@/components/quantum/QuantumProofLab";
+import { QuantumPortalCTA } from "@/components/quantum/QuantumPortalCTA";
 
 export default function HomePage() {
   return (
-    <div>
-      {/* الواجهة الترحيبية */}
-      <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
-        <div className="quantum-grid absolute inset-0 -z-10" aria-hidden="true" />
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-300">
-            <Sparkles className="h-3.5 w-3.5" />
-            {EXERCISES.length} وحدات · {TOTAL_QUESTIONS} سؤالاً تفاعلياً
-          </span>
+    <div className="relative min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#020712] dark:text-slate-100 overflow-x-hidden">
+      {/* Background Ambient Grid & Particles */}
+      <div className="quantum-grid fixed inset-0 pointer-events-none -z-10" aria-hidden="true" />
+      <div className="pointer-events-none fixed top-0 right-1/4 h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-brand-500/10 blur-[100px] sm:blur-[140px] -z-10" />
+      <div className="pointer-events-none fixed bottom-0 left-1/4 h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-gold-400/10 blur-[100px] sm:blur-[140px] -z-10" />
 
-          <h1 className="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl dark:text-white">
-            أتقن الحوسبة الكمية
-            <br />
-            <span className="bg-gradient-to-l from-brand-700 via-brand-600 to-brand-400 bg-clip-text text-transparent dark:from-gold-400 dark:via-brand-400 dark:to-brand-300">
-              بالتمرين لا بالحفظ
+      {/* 1. HERO SECTION: Enter the Quantum World */}
+      <section className="relative px-4 pt-6 pb-14 sm:px-6 sm:pt-14 lg:pt-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-semibold text-brand-800 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300">
+              <Sparkles className="h-3.5 w-3.5 text-brand-600 dark:text-emerald-400" />
+              منصة تفاعلية عربية بالكامل · {EXERCISES.length} مسارات و {TOTAL_QUESTIONS} سؤالاً
             </span>
-          </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
-            تمارين عربية تفاعلية تبدأ من متجه الحالة وتنتهي عند تصحيح الأخطاء الكمية، مع
-            تغذية راجعة فورية وحلول رياضية مفصّلة بترميز ديراك.
-          </p>
+            <h1 className="mt-5 text-3xl font-black tracking-tight leading-tight sm:text-5xl lg:text-6xl text-slate-900 dark:text-white">
+              أتقن الحوسبة الكمية
+              <br />
+              <span className="bg-gradient-to-l from-brand-700 via-brand-600 to-brand-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-brand-300 dark:to-gold-400">
+                بالتفاعل والرياضيات المباشرة
+              </span>
+            </h1>
 
-          <div className="mx-auto mt-6 max-w-md rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
-            <KaTeXMath
-              math="|\psi\rangle = \alpha|0\rangle + \beta|1\rangle, \qquad |\alpha|^2 + |\beta|^2 = 1"
-              display
-              className="my-0"
-            />
-          </div>
+            <p className="mt-3.5 text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mx-auto">
+              تجاوز حدود الحساب الثنائي واستكشف متجهات الحالة والتراكب والتشابك الكمي من خلال تجربة علمية بصرية غامرة.
+            </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="/exercises"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-gold-400 dark:text-brand-950 dark:hover:bg-gold-300"
-            >
-              <BookOpen className="h-4 w-4" />
-              ابدأ التمارين
-              <ArrowLeft className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/cheatsheet"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-            >
-              <Sigma className="h-4 w-4" />
-              ملخص القوانين
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* التصنيفات */}
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="text-xl font-bold text-slate-900 sm:text-2xl dark:text-white">
-          ستة مسارات علمية متكاملة
-        </h2>
-        <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
-          كل مسار يبدأ من الأساس الرياضي وينتهي بتطبيق عملي، بترتيب يبني بعضه على بعض.
-        </p>
-
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CATEGORIES.map((category) => {
-            const exercise = EXERCISES.find((item) => item.category === category.id);
-            return (
+            <div className="mt-6 sm:mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                key={category.id}
-                href={exercise ? `/exercises/${exercise.slug}` : "/exercises"}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900 dark:hover:shadow-black/30"
+                href="/exercises"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-slate-800 active:scale-95 dark:bg-gradient-to-r dark:from-emerald-600 dark:via-brand-500 dark:to-brand-400 dark:shadow-emerald-500/25"
               >
-                <span
-                  className={cn(
-                    "mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br text-white",
-                    category.gradient,
-                  )}
-                >
-                  <CategoryIcon name={category.icon} className="h-5 w-5" />
-                </span>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  {category.nameAr}
-                </h3>
-                <p className="mt-0.5 text-xs text-slate-500" dir="ltr">
-                  {category.nameEn}
-                </p>
-                <p className="mt-2.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {category.descriptionAr}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 dark:text-brand-400">
-                  ابدأ المسار
-                  <ArrowLeft className="h-4 w-4 transition group-hover:-translate-x-0.5" />
-                </span>
+                <BookOpen className="h-4 w-4" />
+                ابدأ التمارين الكمية
+                <ArrowLeft className="h-4 w-4" />
               </Link>
-            );
-          })}
+              <Link
+                href="/cheatsheet"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800"
+              >
+                <Sigma className="h-4 w-4 text-brand-600 dark:text-gold-400" />
+                ملخص القوانين
+              </Link>
+            </div>
+          </div>
+
+          {/* Interactive 3D Quantum Particle Cloud Hero Canvas */}
+          <div className="mt-6 sm:mt-8">
+            <QuantumHeroCanvas />
+          </div>
         </div>
       </section>
+
+      {/* Narrative Story Sections Container */}
+      <div className="mx-auto max-w-6xl px-4 space-y-16 sm:space-y-28 lg:space-y-32 sm:px-6 pb-20 sm:pb-28">
+        {/* 2. THE PARADIGM SHIFT: Classical vs Quantum */}
+        <section className="scroll-mt-24">
+          <ParadigmShiftVisualizer />
+        </section>
+
+        {/* 3. THE QUANTUM CONCEPT: Superposition & Bloch Sphere */}
+        <section className="scroll-mt-24">
+          <BlochSphereInteractive />
+        </section>
+
+        {/* 4. THE SYSTEM: Entanglement & Circuits */}
+        <section className="scroll-mt-24">
+          <QuantumEntanglementCanvas />
+        </section>
+
+        {/* 5. THE CAPABILITIES: Visualizing the 6 Pillars */}
+        <section className="scroll-mt-24">
+          <QuantumPillarsExplorer />
+        </section>
+
+        {/* 6. THE PROOF: Empirical Dirac Sandbox & Stats */}
+        <section className="scroll-mt-24">
+          <QuantumProofLab />
+        </section>
+
+        {/* 7. FINAL CTA: Transcending Classical Thought */}
+        <section className="scroll-mt-24">
+          <QuantumPortalCTA />
+        </section>
+      </div>
     </div>
   );
 }

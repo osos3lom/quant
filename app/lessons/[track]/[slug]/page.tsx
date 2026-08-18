@@ -102,7 +102,7 @@ export default async function NotebookPage({ params }: PageProps) {
             نحو {notebook.estimatedMinutes} دقيقة
           </span>
           <span className="rounded-md bg-slate-100 px-2 py-1 font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-            {stats.runnable} خلايا شيفرة
+            {stats.runnable} خلايا كود
           </span>
           <span className="rounded-md bg-slate-100 px-2 py-1 font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
             {stats.exercises} تمارين · {stats.points} نقطة

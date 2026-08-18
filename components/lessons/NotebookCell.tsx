@@ -246,7 +246,7 @@ export function NotebookCell({
     );
   }
 
-  /* -------------------------- خلية شيفرة --------------------------- */
+  /* -------------------------- خلية كود --------------------------- */
   if (cell.kind === "code") {
     return (
       <section
@@ -295,7 +295,7 @@ export function NotebookCell({
               className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-slate-500 transition hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
             >
               <RotateCcw className="h-3 w-3" />
-              استعادة الشيفرة الأصلية
+              استعادة الكود الأصلية
             </button>
           )}
         </div>
